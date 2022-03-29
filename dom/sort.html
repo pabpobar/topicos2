@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Sort</title>
+        <meta charset="utf-8">
+
+        <!-- <link rel="icon" type="image/x-icon" href="./images/favicon.png"> -->
+        <link rel="icon" href="./images/favicon.png">
+    </head>
+    <body>
+        <h2>Ejemplo con sort()</h2>
+        <p id="carga"></p>
+        <button onclick="listaInicial()">Arreglo inicial</button>
+        <button id="sortalfa" onclick="sortAlfa()">Orden alfabético</button>
+        <button id="sortnum" onclick="sortNum()">Orden numérico</button>
+        <p id="clickenbtn"></p>
+        
+        <p id="orden"></p>
+        <button onclick="sortObj()">Orden objetos</button>
+        <p id="lstAutos"></p>
+
+        <!--Script-->
+        <script>
+            const lista = [100, 30, 50, 1, 7, 3, 60];
+            lstOrig = [...lista]; //ES6 spread operator
+            //lstOrig = Array.from(lista);
+            //lstOrig = lista.map(x=>x);
+            //lstOrig = lista.slice();
+            //lstOrig = [].concat(lista);
+
+            const autos = [
+                {'tipo': 'Volvo', 'año':2015},
+                { 'tipo': 'BMW', 'año': 2009 },
+                { 'tipo': 'Mazda', 'año': 2001 }
+            ]
+            
+
+            document.getElementById('orden').innerHTML=lista;
+            function listaInicial(){
+                document.getElementById('orden').innerHTML = lstOrig;
+            }
+            function sortAlfa() {
+                document.getElementById('orden').innerHTML = lista.sort();
+            }
+            function sortNum(){
+                document.getElementById('orden').innerHTML = lista.sort((a,b) => a-b);
+                //document.getElementById('orden').innerHTML = lista.sort(function(a,b){return a-b});
+            }
+            function sortObj(){
+                autos.sort((a,b)=>a.año-b.año)
+                html = '';
+                for (let i=0; i<autos.length; i++){
+                    //html += autos[i].tipo+' '+autos[i].año+'<br>';
+                    html += `${autos[i].tipo}&nbsp;&nbsp;${autos[i].año}<br>`;
+                }
+                document.getElementById('lstAutos').innerHTML = html;
+            }
+
+            let clickEnBtn = document.getElementById('clickenbtn');
+            eventoCarga = ()=>{
+                document.getElementById('carga').innerHTML = this + ' llamado al cargar...';
+            }
+            clickSortAlfa = ()=> clickEnBtn.innerHTML += '<button>alfabético</button>';
+            clickSortNum = () => clickEnBtn.innerHTML += '<button>numérico</button>';
+            //eventos listeners
+            window.addEventListener('load', eventoCarga);
+            document.getElementById('sortalfa').addEventListener('click', clickSortAlfa)
+            document.getElementById('sortnum').addEventListener('click', clickSortNum);
+        </script>
+
+    </body>
+</html>

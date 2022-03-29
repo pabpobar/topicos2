@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<head>
+    <title>Titulo Elementos</title>
+    <meta charset="utf-8">
+
+    <link rel="icon" href="./images/favicon.png">
+</head>
+<html>
+<body>
+
+<h2>Encontrando Elementos HTML mediante document.images</h2>
+
+<img src="https://www.w3schools.com/js/pic_htmltree.gif" width="486" height="266">
+<img src="https://www.w3schools.com/js/pic_navigate.gif" width="362" height="255">
+
+<p id="demo"></p>
+<p id="imagen"></p>
+<hr>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<hr>
+<div id="div1">
+    <p id="h1">hijo 1</p>
+    <p id="h2">hijo 2</p>
+    <p id="h3">hijo 3</p>
+</div>
+
+<hr>
+<p id="nodos"></p>
+
+<script>
+
+document.getElementById("demo").innerHTML =
+"Number of images: " + document.images.length;
+
+document.getElementById("imagen").innerHTML = 
+    "Imagen 1 -> " + document.images[0].src;
+
+document.getElementById("p1").innerHTML = document.documentElement.firstChild.textContent;
+document.getElementById("p2").innerHTML = document.head.textContent;
+document.getElementById("p3").innerHTML = document.body.lastChild.innerHTML;
+
+let elemento = document.getElementById('div1');
+document.getElementById("nodos").innerHTML = elemento.childNodes.length;
+if (elemento.hasChildNodes){
+    //document.write(elemento.firstElementChild.textContent);
+    //document.write(elemento.childNodes[3].textContent);
+    //document.write(elemento.lastElementChild.textContent);
+    for (let i = 0; i< elemento.childNodes.length; i++){
+        if (elemento.childNodes[i].textContent){
+            document.write(elemento.childNodes[i].textContent)
+        }
+    }
+
+}
+
+
+//document.write(elemento.firstChild.innerHTML);
+
+//if (elemento.hasChildNodes()){
+//    document.write(elemento.length)
+//}
+</script>
+
+</body>
+</html>

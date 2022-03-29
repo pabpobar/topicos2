@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+    </head>
+<body>
+
+<h2>JavaScript HTMLDOM</h2>
+<h3>Mostrar mensaje oculto</h3>
+
+<p id="mostrar" style="display: none;">Mensaje oculto<p>
+<a id="fmuestra" href="javascript:void(0)" onclick="muestraMsg()">Mostrar</a>
+
+<script>
+    //document.getElementById("demo").innerHTML = document.body.innerHTML;
+
+    var pMostrar = document.getElementById("mostrar");
+    var aFmuestra = document.getElementById("fmuestra");
+    function muestraMsg() {
+        if (pMostrar.style.display === 'block') {
+            pMostrar.style.display = 'none';
+            aFmuestra.innerHTML = "Mostrar"
+        } else {
+            pMostrar.style.display = 'block';
+            aFmuestra.innerHTML = "Ocultar"
+        }
+    }
+</script>
+
+</body>
+</html>

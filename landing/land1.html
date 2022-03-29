@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Imgs</title>
+        <meta charset="utf-8">
+
+        <style>
+            body,h1,h2,h3,h4,h5,h6 {
+                font-family: "Raleway", sans-serif
+            }
+
+            body,html {
+                height: 100%;
+                line-height: 1.8;
+            }
+
+            /* Full height image header */
+            .bgimg {
+                background-position: center;
+                background-size: cover;
+                background-image: url("https://www.w3schools.com/w3images/mac.jpg");
+                min-height: 100%;
+            }
+            .fila{
+                float: left;
+            }
+            .col {
+                float:inline-start;
+            }
+        </style>
+    </head>
+    <body>
+
+            <!-- Header with full-height image -->
+            <header class="bgimg" id="home">
+                <div class="w3-display-left w3-text-white" style="padding:48px">
+                    <span class="w3-jumbo w3-hide-small">Start something that matters</span><br>
+                    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Start something that matters</span><br>
+                    <span class="w3-large">Stop wasting valuable time with projects that just isn't you.</span>
+                    <p><a href="#about"
+                            class="w3-button w3-white w3-padding-large w3-large w3-margin-top w3-opacity w3-hover-opacity-off">Learn
+                            more and start today</a></p>
+                </div>
+                <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+            </header>
+        <!--Modal-->
+        <div class="container" style="padding:128px 16px" id="opcion1">
+            <!--Debe quedar centrado-->
+            <h3>Nuestro Trabajo</h3>
+            <p>Qué hacemos por nuestros clientes</p>
+            <div class="fila" style="margin-top:64px">
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_mic.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un micrófonno">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_phone.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un teléfono">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_drone.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un dron">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_sound.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un parlante">
+                </div>
+            </div>
+            <div class="fila">
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_tablet.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Una tablet">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_camera.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un cámara">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_typewriter.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Una máquina de escribir">
+                </div>
+                <div class="col">
+                    <img src="https://www.w3schools.com/w3images/tech_tableturner.jpg" style="width:100%" 
+                            onclick="onClick(this)" alt="Un tocadiscos">
+                </div>
+            </div>
+        </div>
+        <!-- Model para Imagen pantalla completa al hacer click-->
+        <div id="modal" onclick="this.style.display='none'">
+            <span title="Cerrar imagen"></span>
+            <div>
+                <img id="imagen">
+                <p id="subtitulo"></p>
+            </div>
+        </div>
+        <!--js scripts-->
+        <script>
+            function onClick(elemento){
+                document.getElementById('imagen').src = elemento.src;
+                document.getElementById("modal").style.display="block";
+                document.getElementById("subtitulo").innerHTML = "[" + elemento.alt + "]";
+            }
+
+        </script>
+    </body>
+</html>

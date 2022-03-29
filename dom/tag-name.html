@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>TagNam</title>
+        <meta charset="utf-8">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    </head>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Encontrar Elementos HTML por Tag.</p>
+<p>Ejemplo para demostrar método <b>getElementsByTagName</b>.</p>
+
+<spam id="demo"></spam>
+<spam id="todo"></spam>
+
+<div id="div1">
+    <p id="p1">Párrafo 1</p>
+    <p id="p2">Párrafo 2</p>
+</div>
+
+
+
+<script>
+const elemento = document.getElementsByTagName("p");
+
+document.getElementById("demo").innerHTML = 'Tag p en index 0 contiene --> ' + 
+        elemento[0].innerHTML;
+
+let l = elemento.length;
+var html = '<br>';
+for (let i=0; i<l; i++){
+	html += "<br>Elemento: " + i + " Contiene --> " + elemento[i].innerHTML;
+}
+document.getElementById('todo').innerHTML = html;
+
+//Crea nuevo elemento
+const nodoP = document.createElement("p");
+const nodotxt = document.createTextNode('Párrafo adicional....');
+nodoP.appendChild(nodotxt);
+
+const nodoDiv = document.getElementById('div1');
+nodoDiv.appendChild(nodoP);
+
+if (![1, 2].includes(3)) {
+    document.write('No encontrado<br>')
+}
+
+if (![1, 2].indexOf(3)) {
+    document.write('No encontrado')
+} else document.write('Pasó a falso');
+
+</script>
+
+</body>
+</html>

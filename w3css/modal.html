@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+    <div class="w3-bar w3-black">
+        <a href="#" class="w3-bar-item w3-button">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Nosotros</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Servicios</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+            <button class="w3-button">Portafolios</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Proy 1</a>
+                <a href="#" class="w3-bar-item w3-button">Proy 2</a>
+                <a href="#" class="w3-bar-item w3-button">Proy 3</a>
+            </div>
+        </div>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small">Contacto</a>
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
+    </div>
+
+    <div id="demo" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
+        <a href="#" class="w3-bar-item w3-button">Nosotros</a>
+        <a href="#" class="w3-bar-item w3-button">Servicios</a>
+        <div class="w3-dropdown-hover">
+            <button class="w3-button">Portafolios</button>
+            <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                <a href="#" class="w3-bar-item w3-button">Proy 1</a>
+                <a href="#" class="w3-bar-item w3-button">Proy 2</a>
+                <a href="#" class="w3-bar-item w3-button">Proy 3</a>
+            </div>
+        <a href="#" class="w3-bar-item w3-button">Contacto</a>
+    </div>
+
+    <div class="w3-container">
+        <h2>W3.CSS Modal</h2>
+        <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open
+            Modal</button>
+
+        <div id="id01" class="w3-modal">
+            <div class="w3-modal-content">
+                <div class="w3-container">
+                    <span onclick="document.getElementById('id01').style.display='none'"
+                        class="w3-button w3-display-topright">&times;</span>
+                    <p>Some text. Some text. Some text.</p>
+                    <p>Some text. Some text. Some text.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myFunction() {
+            var x = document.getElementById("demo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

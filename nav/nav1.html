@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Bootstrap5</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!--w3.css-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!--Fontawesome 4-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        #tipo {
+            font-family: 'Tangerine', serif;
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--otras clses: fixed-top, fixed-bottom, sticky-top-->
+    <!-- quitar navbar-expand-* oculta opciones y muestra botón toggle-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../logos/free-logo-1.png" alt="Logo" style="width:30px;" class="rounded-pill">
+                <span id="tipo">BlueMoon</span>
+                <!--<span class="w3-cursive">BlueMoon</span>-->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#colapsaNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="colapsaNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Ideales</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Portafolios</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Ejemplo 1</a></li>
+                            <li><a class="dropdown-item" href="#">Ejemplo 2</a></li>
+                            <li><a class="dropdown-item" href="#">Ejemplo 3</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="javascript:void(0)">Contacto</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="text" placeholder="Search">
+                    <button class="btn btn-primary" type="button">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-3">
+        <h3>Collapsible Navbar</h3>
+        <p>In this example, the navigation bar is hidden on small screens and replaced by a button in the top right
+            corner (try to re-size this window).</p>
+        <p>Only when the button is clicked, the navigation bar will be displayed.</p>
+        <p>Tip: You can also remove the .navbar-expand-md class to ALWAYS hide navbar links and display the toggler
+            button.</p>
+    </div>
+
+    <div class="w3-container">
+        <h2>Contenedor de tarjetas</h2>
+        <p>Agregar contenedores dentro de las tarjetas para crear diferentes secciones.</p>
+        <div class="w3-card-4" style="width: 40%;">
+            <header class="w3-container w3-blue w3-center">
+                <h1>Encabezado</h1>
+            </header>
+            <div class="w3-container">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </div>
+            <footer class="w3-container w3-blue w3-small w3-center">
+                <p>Pié de página</p>
+            </footer>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <div class="w3-panel w3-sand">
+            <span style="font-size:150px;line-height:0.6em;opacity:0.2">❝</span>
+            <!--<span style="font-size:150px;line-height:0.6em;opacity:0.2">&#10077;</span>-->
+            <p class="w3-xlarge" style="margin-top:-40px">
+                <i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non
+                    massa vitae risus fermentum ullamcorper. Phasellus risus urna, ornare 
+                    in aliquam id, porttitor sit amet sapien. Nulla facilisi.</i>
+            </p>
+        </div>
+    </div>
+
+    <!--Bootstrap 5 modal-->
+    <div class="container mt-3">
+        <h3>EJemplo Modal desvanescente</h3>
+        <p>Click en el botón para abrir ventana modal</p>
+    
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+            Abrir modal
+        </button>
+    </div>
+    
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+        <!-- modal-sm -->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header bg-dark text-white">
+                    <h4 class="modal-title">Cabecera modal</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+    
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Cuerpo de texto de la ventana modal.
+                </div>
+    
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--Formulario-->
+    <form action="javascript:void(0)" 
+        class="w3-container w3-card-4 w3-light-grey w3-margin">
+        <h2 class="w3-center w3-light-blue w3-text-white">Estar contacto importa</h2>
+
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="nombre" type="text" placeholder="Nombre">
+            </div>
+        </div>
+    
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="apellido" type="text" placeholder="Apellido">
+            </div>
+        </div>
+    
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-envelope-o"></i></div>
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="email" type="text" placeholder="Email">
+            </div>
+        </div>
+    
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-phone"></i></div>
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="fono" type="text" placeholder="Teléfono">
+            </div>
+        </div>
+    
+        <div class="w3-row w3-section">
+            <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-pencil"></i></div>
+            <div class="w3-rest">
+                <input class="w3-input w3-border" name="mensaje" type="text" placeholder="Mensaje">
+            </div>
+        </div>
+    
+        <div class="w3-small">
+        <span>
+            <input class="w3-check" type="checkbox" checked="checked">
+            <label>Deseo recibir newsleter</label>
+        </span><br>
+        <span>
+            <input class="w3-check" type="checkbox">
+            <label>Recibir novedades de asociados</label>
+        </span><br>
+        <span>
+            <input class="w3-check" type="checkbox" disabled>
+            <label>Contarme por teléfono</label>
+        </span>
+        </div>
+        <button class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding">Enviar</button>
+    </form>
+
+    <div class="container-fluid">
+        <form action="javascript:void(0)" class="was-validated">
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Usuario:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Ingrese nombre de usuario" name="uname" required>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Debe ingresar este dato.</div>
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Clave:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Ingrese clave" name="pswd" required>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Debe ingresar este dato.</div>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                <label class="form-check-label" for="myCheck">Recordarme.</label>
+                <div class="valid-feedback">Válido.</div>
+                <div class="invalid-feedback">Chequear para continuar.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+
+</body>
+
+</html>

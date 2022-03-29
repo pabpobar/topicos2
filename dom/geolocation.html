@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>jsGeoloc</title>
+    <meta charset="utf-8">
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+</head>
+<body>
+
+<h2>JavaScript Gelocation</h2>
+
+<p>Click en el botón para obtener tus coordenadas.</p>
+
+<button onclick="obtenerCoords()">Ver Coordenadas</button>
+
+<p id="coords"></p>
+<p id="error"></p>
+
+<script>
+const x = document.getElementById("coords");
+var opciones = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+
+function obtenerCoords() {
+  try {
+    navigator.geolocation.getCurrentPosition(exito, error, opciones);
+  } catch (err) {
+    x.innerHTML = "Error: ... "+err;
+  }
+}
+
+function exito(pos) {
+  var coord = pos.coords;
+  x.innerHTML = "La posición actual es: " + 
+    "<br>Latitud: " + coord.latitude + 
+    "<br>Longitud: " + coord.longitude +
+    "<br>Precisión aprox.: " + coord.accuracy + " metros.";
+}
+
+function error(err) {
+    document.getElementById("error").innerHTML = "Error callback.."+
+        "Código: "+err.code+" Mensaje: "+err.message;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Templates</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <p id="template"></p>
+        <p id="astr"></p>
+        <p id="join"></p>
+
+        <!--Script-->
+        <script>
+            let titulo = "Enumeración";
+            //let lista = ['uno', 'dos', 'tres'];
+            let lista = ['uno', 1, 'dos', 2, 'tres', 'cuatro'];
+
+            let html = `<h1>${titulo}</h1><ul>`;
+            for (const item of lista){
+                html += `<li>${item}</li>`;
+            }
+            html += `</ul>`;
+            document.getElementById('template').innerHTML=html;
+            document.getElementById('astr').innerHTML = lista.toString();
+            document.getElementById('join').innerHTML = lista.join('-');
+        </script>
+    </body>
+</html>
